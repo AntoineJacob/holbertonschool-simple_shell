@@ -1,20 +1,5 @@
-```
-
-                       _____ _   _ _____    ____    _  _____ _____ ____     ___  _____ 
-                      |_   _| | | | ____|  / ___|  / \|_   _| ____/ ___|   / _ \|  ___|
-                        | | | |_| |  _|   | |  _  / _ \ | | |  _| \___ \  | | | | |_   
-                        | | |  _  | |___  | |_| |/ ___ \| | | |___ ___) | | |_| |  _|  
-                        |_| |_| |_|_____|  \____/_/   \_\_| |_____|____/   \___/|_|    
-
-                                       ____  _   _ _____ _     _     
-                                      / ___|| | | | ____| |   | |    
-                                      \___ \| |_| |  _| | |   | |    
-                                       ___) |  _  | |___| |___| |___ 
-                                      |____/|_| |_|_____|_____|_____|
-                                                                      
-```
 ## HSH: The Holberton School Shell
-The gates of shell is a Holberton School project in the first trimester, helps student to understand the advanced
+The  shell is a Holberton School project in the first trimester, helps student to understand the advanced
 concepts behind the shell program include process, system call, bit manipulation, file managment, error handling ...
 
 ### General
@@ -86,11 +71,57 @@ concepts behind the shell program include process, system call, bit manipulation
 ### Compilation
 All files will be compiled with the following: `$ gcc -Wall -Werror -Wextra -pedantic *.c`
 
+### How to use our shell
+First, you have to clone our projet by copy `https://github.com/AntoineJacob/holbertonschool-simple_shell.git`
+
+Then, you have to complil it `gcc 4.8.4 -Wall -Werror -Wextra -pedantic *.c -o hsh`
+
+You can now run our shell by typing `./hsh`
+
+### Memory leaks
+If you want to check memory leaks, you can use `valgrind --leak-check=full ./hsh`
+
+### Manual
+You can have more informations about how to use our shell by typing `man ./man_1_simple_shell`
+
+### What the function return ?
+ A return command is used to exit from a shell function. It takes a parameter [N], if N is mentioned then it returns [N] and if N is not mentioned then it returns the status of the last command executed within the function or script. N can only be a numeric value. Note that echo $? can be used to display the last return status.
+
+### Exemples of outputs:
+### In interactive mode
+- with ls
+```
+username@your-regular-prompt:/holbertonschool-simple_shell# ./hsh
+$ ls
+AUTHORS  EOF.c  README.md  environ.c  errors.c  execute.c  exit.c  fork.c  frees.c  gen-authors  hsh  main.c  path.c  prompt.c  shell.h  strfunct.c  tokenize.c
+$
+```
+### In non-interactive mode
+- with echo "/bin/ls" | ./hsh
+```
+username@your-regular-prompt:/holbertonschool-simple_shell# echo "/bin/ls" | ./hsh
+AUTHORS  environ.c  EOF.c  errors.c  execute.c  exit.c  fork.c  frees.c  gen-authors  hsh  main.c  path.c  prompt.c  README.md  shell.h  strfunct.c  tokenize.c
+$
+```
+## To compare with the basic Unix Shell :
+### In interactive mode
+
+- with ls
+```
+username@your-regular-prompt:/holbertonschool-simple_shell# ls
+AUTHORS  EOF.c  README.md  environ.c  errors.c  execute.c  exit.c  fork.c  frees.c  gen-authors  hsh  main.c  path.c  prompt.c  shell.h  strfunct.c  tokenize.c
+username@your-regular-prompt:/holbertonschool-simple_shell#
+```
+### In non-interactive mode
+- with echo "/bin/ls" | /bin/sh
+```
+username@your-regular-prompt:/holbertonschool-simple_shell# echo "/bin/ls" | /bin/sh
+AUTHORS  environ.c  EOF.c  errors.c  execute.c  exit.c  fork.c  frees.c  gen-authors  hsh  main.c  path.c  prompt.c  README.md  shell.h  strfunct.c  tokenize.c
+username@your-regular-prompt:/holbertonschool-simple_shell#
+```
 ### Comments
-No bugs or memory leaks
+ No memory leaks, but we need to debug some parts of the code to get the 100%.
 
 ### Authors
 * Antoine jacob - https://github.com/AntoineJacob
 * Kylian Vallier - https://github.com/https://github.com/instagram-aesgod
-
-
